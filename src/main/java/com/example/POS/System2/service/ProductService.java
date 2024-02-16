@@ -52,7 +52,7 @@ public class ProductService {
 
     }
 
-    public ProductDTO searchProduct(int productID){
+    public ProductDTO searchProduct(Long productID){
         if (productRepository.existsById(productID)){
             Product product=productRepository.findById(productID).orElse(null);
             return modelMapper.map(product, ProductDTO.class);
@@ -61,7 +61,7 @@ public class ProductService {
         }
     }
 
-    public String deleteProduct(int productID){
+    public String deleteProduct(Long productID){
         if (productRepository.existsById(productID)){
             productRepository.deleteById(productID);
             return VarList.RSP_SUCCESS;

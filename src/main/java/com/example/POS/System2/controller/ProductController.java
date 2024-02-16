@@ -124,7 +124,7 @@ public class ProductController {
     }
 
     @GetMapping("/searchProduct/{productID}")
-    public ResponseEntity searchProduct(@PathVariable int productID){
+    public ResponseEntity searchProduct(@PathVariable Long productID){
         try{
             ProductDTO productDTO=productService.searchProduct(productID);
             if(productDTO != null){
@@ -153,7 +153,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/deleteProduct/{productID}")
-    public ResponseEntity deleteProduct(@PathVariable int productID){
+    public ResponseEntity deleteProduct(@PathVariable Long productID){
         try{
             String res=productService.deleteProduct(productID);
             if(res.equals("00")){

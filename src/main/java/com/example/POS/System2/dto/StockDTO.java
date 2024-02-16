@@ -1,6 +1,6 @@
 package com.example.POS.System2.dto;
 
-import jakarta.persistence.Column;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,12 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ProductDTO {
-
+public class StockDTO {
+    private Long id;
     private Long productID;
+    private int quantity;
 
-    @Column(nullable = false)
-    private String productName;
-    @Column(nullable = false)
-    private Double productPrice;
 }
